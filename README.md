@@ -18,9 +18,11 @@ Add to your composer.json
 
 require_once 'vendor/autoload.php';
 
-$police = new Police;
+$police = new \BespokeSupport\PoliceApi\PoliceUK;
 
 $obj = $police->lastupdated();
+
+var_dump($obj);
 ```
 
 ```
