@@ -16,7 +16,9 @@
   },
   "require": {
     "php": ">=5.4",
-    "ext-curl": "*",
     "kriswallsmith/buzz": "~0.15"
+  },
+  "suggest": {
+    "ext-curl": "*"
   }
 }
