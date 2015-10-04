@@ -1,7 +1,7 @@
 {
   "name": "bespoke-support/police-api",
   "description": "API and Data for Police UK",
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
     {
