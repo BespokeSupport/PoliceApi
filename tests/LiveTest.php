@@ -14,7 +14,6 @@
 
 namespace BespokeSupport\PoliceApi\Tests;
 
-use BespokeSupport\PoliceApi\PoliceJsonApi;
 use BespokeSupport\PoliceApi\PoliceUK;
 
 /**
@@ -193,29 +192,8 @@ class LiveTest extends \PHPUnit_Framework_TestCase
      * API: LastUpdated
      * @return void
      */
-    public function testLiveUpdatedCurl()
+    public function testLiveUpdated()
     {
-        PoliceJsonApi::setClient(PoliceJsonApi::CLIENT_CURL);
-
-        $police = $this->getClient();
-
-        $return = $police->lastupdated();
-
-        $this->assertObjectHasAttribute('date', $return);
-
-        $date = \DateTime::createFromFormat('Y-m-d', $return->date);
-
-        $this->assertEquals('DateTime', get_class($date));
-    }
-
-    /**
-     * API: LastUpdated
-     * @return void
-     */
-    public function testLiveUpdatedFileGetContents()
-    {
-        PoliceJsonApi::setClient(PoliceJsonApi::CLIENT_FILE_GET_CONTENTS);
-
         $police = $this->getClient();
 
         $return = $police->lastupdated();

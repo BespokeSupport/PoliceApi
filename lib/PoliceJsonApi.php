@@ -18,7 +18,6 @@ use Buzz\Browser;
 use Buzz\Client\Curl;
 use Buzz\Client\FileGetContents;
 use Buzz\Message\Form\FormRequest;
-use Buzz\Message\MessageInterface;
 use Buzz\Message\Request;
 use Buzz\Message\Response;
 
@@ -103,6 +102,7 @@ class PoliceJsonApi
             $client = self::$client;
         }
 
+        // @codeCoverageIgnoreStart
         switch ($client) {
             case self::CLIENT_FILE_GET_CONTENTS:
                 return new FileGetContents();
@@ -110,7 +110,6 @@ class PoliceJsonApi
             case self::CLIENT_CURL:
                 return new Curl();
                 break;
-            // @codeCoverageIgnoreStart
             default:
                 if (function_exists('curl_init')) {
                     return new Curl();
@@ -118,8 +117,8 @@ class PoliceJsonApi
                     return new FileGetContents();
                 }
                 break;
-            // @codeCoverageIgnoreEnd
         }
+        // @codeCoverageIgnoreEnd
     }
 
     /**
