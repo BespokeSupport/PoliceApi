@@ -1,0 +1,22 @@
+{
+  "name": "bespoke-support/police-api",
+  "description": "API and Data for Police UK",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Richard Seymour",
+      "email": "web@bespoke.support"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "BespokeSupport\\PoliceApi\\": "lib/"
+    }
+  },
+  "require": {
+    "php": ">=5.4",
+    "ext-curl": "*",
+    "kriswallsmith/buzz": "~0.15"
+  }
+}
